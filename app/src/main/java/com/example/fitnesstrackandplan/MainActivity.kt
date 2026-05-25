@@ -3,25 +3,19 @@ package com.example.fitnesstrackandplan
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.work.ExistingPeriodicWorkPolicy
-import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import com.example.fitnesstrackandplan.navigation.AppNavigation
 import com.example.fitnesstrackandplan.ui.screens.IntroScreen
-import com.example.fitnesstrackandplan.ui.screens.ProfileSetupScreen
 import com.example.fitnesstrackandplan.ui.theme.FitnessTrackAndPlanTheme
 import com.example.fitnesstrackandplan.worker.TrainingReminderWorker
 import java.util.concurrent.TimeUnit
-
+// pri praci bola pouzita a i ako pre konzultaciu niektorych funkcionalit
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +46,7 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+    // notifikacia s pomocou A I
     private fun scheduleTrainingReminder() {
         val workRequest = PeriodicWorkRequestBuilder<TrainingReminderWorker>(
             1,

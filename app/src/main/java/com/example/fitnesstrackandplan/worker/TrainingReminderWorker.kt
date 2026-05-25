@@ -12,6 +12,7 @@ import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.example.fitnesstrackandplan.R
 
+// notifikacie s pomocou A I
 class TrainingReminderWorker(
     context: Context,
     workerParams: WorkerParameters
